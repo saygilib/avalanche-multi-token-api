@@ -2,6 +2,9 @@
 
 ```docker compose up --build```
 
+**For extracting abi's**
+``` node extract-abis.js```
+
 # Overview
 
 This project includes:
@@ -23,9 +26,9 @@ truffle migrate --network fuji
 **Contracts deployed to:**
 ```
 Contract	Address
-ERC20	0x7BcC0Ee8628c0abE0D60424a53081773792531b8
-ERC721	0xc5fCF19357B076Fa5efbE444E23610D12A400797
-ERC1155	0xCe6ca22e42128bC9576B3b877aD1e5b365692df2
+ERC20_ADDRESS=0x91E88CbD04b794B7F74CF96211AC1AB5a3639b19
+ERC721_ADDRESS=0x6F6AbE23b9C17E22fD01B998195f8e3Cf699c188
+ERC1155_ADDRESS=0x8676762eafA005b1eF59ce883Ee9A06d47e086fA
 ```
 
 # Go Backend API Endpoints
