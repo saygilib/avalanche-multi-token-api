@@ -164,7 +164,7 @@ Stored in go-backend/.env.
 
 API → localhost:8080
 
-PostgreSQL → localhost:5433 (if you changed the port)
+PostgreSQL → localhost:5433 
 
 # Project Structure 
 
