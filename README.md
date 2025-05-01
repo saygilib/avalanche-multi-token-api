@@ -50,9 +50,7 @@ Same input as /mint.
 /balance [GET]
 Get balances:
 
-bash
-Kopyala
-Düzenle
+
 /balance?tokenType=erc20&walletAddress=0x...
 /balance?tokenType=erc721&walletAddress=0x...
 /balance?tokenType=erc1155&walletAddress=0x...&tokenId=1
