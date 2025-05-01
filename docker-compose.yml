@@ -1,0 +1,30 @@
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: avalanche_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1311201abs
+      POSTGRES_DB: Bbcode
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  go-backend:
+    build:
+      context: ./go-backend
+    container_name: avalanche_go_backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    env_file:
+      - go-backend/.env
+   
+    restart: always
+
+volumes:
+  postgres_data:

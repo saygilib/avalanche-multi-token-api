@@ -1,0 +1,10 @@
+node_modules
+build/
+.env
+go-backend/.env
+go-backend/abi/
+go-backend/contracts/
+postgres_data/
+.DS_Store
+*.log
+*.pid
