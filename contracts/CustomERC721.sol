@@ -9,8 +9,9 @@ contract CustomERC721 is ERC721URIStorage, Ownable {
 
     constructor(address initialOwner)
         ERC721("MyCustomNFT", "MCN")
-        Ownable(initialOwner)
-    {}
+    {
+        _transferOwnership(initialOwner);
+    }
 
     function mint(address to, string memory uri) public onlyOwner returns (uint256) {
         _tokenIdCounter++;

@@ -7,7 +7,6 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract CustomERC1155 is ERC1155URIStorage, Ownable {
     constructor(address initialOwner)
         ERC1155("")
-        Ownable(initialOwner)
     {
         // Initial mint of two token types with preset URIs
         _setURI(1, "https://example.com/metadata/gold.json");
@@ -15,6 +14,8 @@ contract CustomERC1155 is ERC1155URIStorage, Ownable {
 
         _mint(initialOwner, 1, 100, "");
         _mint(initialOwner, 2, 250, "");
+
+        _transferOwnership(initialOwner);
     }
 
     function mint(

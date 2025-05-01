@@ -10,8 +10,9 @@ contract CustomERC20 is ERC20, Ownable {
         string memory symbol,
         uint256 initialSupply,
         address initialOwner
-    ) ERC20(name, symbol) Ownable(initialOwner) {
+    ) ERC20(name, symbol) {
         _mint(initialOwner, initialSupply * (10 ** decimals()));
+        _transferOwnership(initialOwner);
     }
 
     function mint(address to, uint256 amount) external onlyOwner {
