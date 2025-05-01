@@ -59,7 +59,53 @@ Get balances:
 Fetch all API logs from the database.
 
 ```
+# Curl Examples
+```
+curl -X POST http://localhost:8080/mint \
+-H "Content-Type: application/json" \
+-d '{
+    "tokenType": "erc20",
+    "toAddress": "0x8DAf1D28716c98106AAd7368D24cD3FEad66Cad0",
+    "amount": "1000"
+}'
+--------------------------------------------------------------------
+curl -X POST http://localhost:8080/mint \
+-H "Content-Type: application/json" \
+-d '{
+    "tokenType": "erc721",
+    "toAddress": "0x8DAf1D28716c98106AAd7368D24cD3FEad66Cad0",
+    "tokenURI": "https://example.com/metadata/1.json"
+}'
+--------------------------------------------------------------------
+curl -X POST http://localhost:8080/mint \
+-H "Content-Type: application/json" \
+-d '{
+    "tokenType": "erc1155",
+    "toAddress": "0x8DAf1D28716c98106AAd7368D24cD3FEad66Cad0",
+    "amount": "10",
+    "tokenId": "1",
+    "tokenURI": "https://example.com/metadata/1155/1.json"
+}'
 
+--------------------------------------------------------------------
+curl -X GET "http://localhost:8080/balance?tokenType=erc20&walletAddress=0x8DAf1D28716c98106AAd7368D24cD3FEad66Cad0"
+--------------------------------------------------------------------
+
+curl -X GET "http://localhost:8080/balance?tokenType=erc721&walletAddress=0x8DAf1D28716c98106AAd7368D24cD3FEad66Cad0"
+--------------------------------------------------------------------
+curl -X GET "http://localhost:8080/balance?tokenType=erc1155&walletAddress=0x8DAf1D28716c98106AAd7368D24cD3FEad66Cad0&tokenId=1"
+--------------------------------------------------------------------
+
+curl -X POST http://localhost:8080/transfer \
+-H "Content-Type: application/json" \
+-d '{
+    "tokenType": "erc20",
+    "toAddress": "0x8DAf1D28716c98106AAd7368D24cD3FEad66Cad0",
+    "amount": "10"
+}'
+--------------------------------------------------------------------
+curl -X GET http://localhost:8080/all-logs
+```
 
 # ABI Integration in Go
 
